@@ -1,0 +1,16 @@
+# 忽略常见视频文件
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mkv
+*.webm
+*.mpeg
+*.mpg
+*.3gp
+*.m4v
+*.ts
+*.vob
+*.ogv
+*.gif
