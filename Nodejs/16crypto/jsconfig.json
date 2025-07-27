@@ -1,0 +1,13 @@
+// jsconfig.json
+{
+  "compilerOptions": {
+    "module": "CommonJS", // Node.js 常用模块系统
+    "target": "ESNext",    // 支持最新的 JavaScript 语法
+    "checkJs": true,       // 开启 JavaScript 文件类型检查，有助于提示
+    "lib": ["ESNext"],     // 包含 ESNext 的内置类型声明
+    "allowSyntheticDefaultImports": true // 允许默认导入
+  },
+  "exclude": [
+    "node_modules" // 排除 node_modules 文件夹，避免扫描过多文件
+  ]
+}
