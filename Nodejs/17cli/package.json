@@ -1,0 +1,24 @@
+{
+  "name": "17cli",
+  "version": "1.0.0",
+  "description": "1. 自定义命令 而不是node执行脚本\r 2. -V --help creae命令行交互工具\r 3. 去下载模板isTs 下载ts版本",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bin": {
+    "test-cli": "src/index.js"
+  },
+  "dependencies": {
+    "@types/node": "^24.1.0",
+    "commander": "^14.0.0",
+    "download-git-repo": "^3.0.2",
+    "inquirer": "^12.9.0",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {}
+}
