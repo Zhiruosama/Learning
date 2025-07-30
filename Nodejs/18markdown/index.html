@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>markdown to html</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>Node.js 学习笔记</h1>
+<h2>简介</h2>
+<p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境，使开发者能够使用 JavaScript 来编写服务器端的应用程序。</p>
+<h2>主要特点</h2>
+<ul>
+<li><strong>非阻塞 I/O</strong> - 提高应用程序的性能和可扩展性</li>
+<li><strong>事件驱动</strong> - 基于事件循环的编程模型</li>
+<li><strong>轻量且高效</strong> - 适合构建网络应用</li>
+<li><strong>npm</strong> - 世界上最大的开源库生态系统</li>
+</ul>
+<h2>基础示例</h2>
+<pre><code class="language-javascript">// 创建一个简单的 HTTP 服务器
+const http = require(&#39;http&#39;);
+
+const server = http.createServer((req, res) =&gt; {
+  res.statusCode = 200;
+  res.setHeader(&#39;Content-Type&#39;, &#39;text/plain&#39;);
+  res.end(&#39;你好，世界！\n&#39;);
+});
+
+server.listen(3000, &#39;127.0.0.1&#39;, () =&gt; {
+  console.log(&#39;服务器运行在 http://127.0.0.1:3000/&#39;);
+});
+</code></pre>
+<h2>常用模块</h2>
+<table>
+<thead>
+<tr>
+<th>模块名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fs</td>
+<td>文件系统操作</td>
+</tr>
+<tr>
+<td>path</td>
+<td>处理文件路径</td>
+</tr>
+<tr>
+<td>http</td>
+<td>HTTP 服务器和客户端</td>
+</tr>
+<tr>
+<td>events</td>
+<td>事件处理</td>
+</tr>
+<tr>
+<td>crypto</td>
+<td>加密功能</td>
+</tr>
+</tbody></table>
+<h2>异步编程</h2>
+<h3>回调函数</h3>
+<pre><code class="language-javascript">fs.readFile(&#39;文件.txt&#39;, &#39;utf8&#39;, (err, data) =&gt; {
+  if (err) throw err;
+  console.log(data);
+});
+</code></pre>
+<h3>Promise</h3>
+<pre><code class="language-javascript">const fsPromises = require(&#39;fs&#39;).promises;
+
+fsPromises.readFile(&#39;文件.txt&#39;, &#39;utf8&#39;)
+  .then(data =&gt; console.log(data))
+  .catch(err =&gt; console.error(err));
+</code></pre>
+<h3>Async/Await</h3>
+<pre><code class="language-javascript">async function readFile() {
+  try {
+    const data = await fsPromises.readFile(&#39;文件.txt&#39;, &#39;utf8&#39;);
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+readFile();
+</code></pre>
+<h2>学习资源</h2>
+<ol>
+<li><a href="https://nodejs.org/docs/">Node.js 官方文档</a></li>
+<li>[Node</li>
+</ol>
+
+</body>
+</html>
