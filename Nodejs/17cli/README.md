@@ -9,6 +9,7 @@
 ```sh
 npm link
 ```
+创建一个软连接挂载到全局s
 2. -V --help creae命令行交互工具
 3. 去下载模板isTs 下载ts版本
 
