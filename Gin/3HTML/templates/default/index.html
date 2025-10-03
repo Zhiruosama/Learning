@@ -1,0 +1,57 @@
+{{ define "default/index.html" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/basic.css">
+</head>
+
+<body>
+
+    {{template "public/page_header.html" .}}
+
+    <h2>{{.title}}</h2>
+
+    <!-- 定义变量 -->
+    {{$t:=.title}}
+    <br>
+    <h4>
+        {{$t}}
+    </h4>
+
+    <!-- range循环 -->
+
+    <ul>
+        {{range $key,$value:=.hobby}}
+        <li>{{$key}}---{{$value}}</li>
+        {{end}}
+    </ul>
+
+    <br>
+
+    <!-- with解构结构体 -->
+
+    {{with .news}}
+    {{.Title}}---{{.Content}}
+    {{end}}
+
+    <br>
+
+    {{UnixToTime .data}}
+
+
+    <!-- 
+     常用比较函数
+     eq ==
+     ne !=
+     lt <
+     le <=
+     gt >
+     ge >= -->
+</body>
+
+</html>
+{{ end }}

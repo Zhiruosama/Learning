@@ -97,15 +97,15 @@ import (
 // 文件复制
 func CopyFile(srcFileName string, dstFileName string) (err error) {
 	sFile, err1 := os.Open(srcFileName)
-	defer sFile.Close()
 	dFile, err2 := os.OpenFile(dstFileName, os.O_CREATE|os.O_WRONLY, 0666)
-	defer dFile.Close()
 	if err1 != nil {
 		return err1
 	}
 	if err2 != nil {
 		return err2
 	}
+	defer sFile.Close()
+	defer dFile.Close()
 	var tempSlice = make([]byte, 128)
 	for {
 		//读取数据
