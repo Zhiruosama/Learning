@@ -1,0 +1,28 @@
+{{ define "home/useradd.html" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/basic.css">
+</head>
+
+<body>
+
+    <h2>演示文件上传</h2>
+    <form action="/doupload" method="post" enctype="multipart/form-data">
+        用户名<input type="text" name="username" placeholder="用户名" />
+        <br>
+        <br>
+        头像<input type="file" name="face" placeholder="头像"/>
+        <br>
+        <br>
+        <input type="submit" value="提交">
+
+    </form>
+</body>
+
+</html>
+{{ end }}

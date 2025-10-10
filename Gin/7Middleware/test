@@ -1,0 +1,41 @@
+// //中间件介绍
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"time"
+
+// 	"github.com/gin-gonic/gin"
+// )
+
+// // 中间件可以有多个 当有多个中间件被调用时
+// // 其调用顺序会像洋葱一样
+// func InitMiddleware(c *gin.Context) {
+// 	start := time.Now().UnixNano()
+// 	fmt.Println("1-这是中间件")
+// 	//调用该请求的剩余处理程序
+// 	c.Next()
+// 	fmt.Println("2-这是中间件")
+// 	end := time.Now().UnixNano()
+// 	fmt.Println(end - start)
+// }
+
+// func main() {
+// 	router := gin.Default()
+
+// 	//全局中间件配置
+// 	router.Use(InitMiddleware)
+
+// 	router.GET("/", func(ctx *gin.Context) {
+// 		fmt.Println("这是gin首页")
+// 		time.Sleep(time.Second)
+// 		ctx.String(200, "gin首页")
+// 	})
+
+// 	router.GET("/news", func(ctx *gin.Context) {
+// 		ctx.String(200, "新闻首页")
+// 	})
+
+// 	router.Run()
+// }
