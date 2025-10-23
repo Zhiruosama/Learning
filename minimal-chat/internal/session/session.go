@@ -1,6 +1,8 @@
 package session
 
 import (
+	"net/http"
+
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
@@ -8,6 +10,14 @@ import (
 
 func Middleware() gin.HandlerFunc {
 	store := cookie.NewStore([]byte("change_me_very_secret"))
+	store.Options(sessions.Options{
+		Path:     "/",
+		Domain:   "",
+		MaxAge:   30 * 24 * 60 * 60,
+		Secure:   false,
+		HttpOnly: true,
+		SameSite: http.SameSiteLaxMode,
+	})
 	return sessions.Sessions("minimal_chat", store)
 }
 

@@ -2,6 +2,7 @@ package httpserver
 
 import (
 	"minimal_chat/internal/session"
+	"minimal_chat/internal/ws"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -25,6 +26,9 @@ func BuildRouter() *gin.Engine {
 	r.POST("/login", Login)
 	r.GET("/me", Me)
 	r.GET("/logout", Logout)
+
+	//WebSocket入口
+	r.GET("/ws", ws.Start)
 
 	return r
 }
