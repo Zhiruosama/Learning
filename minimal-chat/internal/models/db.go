@@ -17,5 +17,5 @@ func InitDB(dsn string) error {
 }
 
 func AutoMigrate() error {
-	return DB.AutoMigrate(&User{})
+	return DB.AutoMigrate(&User{}, &Message{})
 }

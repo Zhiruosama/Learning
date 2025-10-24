@@ -27,6 +27,10 @@ func BuildRouter() *gin.Engine {
 	r.GET("/me", Me)
 	r.GET("/logout", Logout)
 
+	//历史查询
+	r.GET("/rooms/:id/messages", ListRoomMessages)
+	r.GET("/messages/private", ListPrivateMessages)
+
 	//WebSocket入口
 	r.GET("/ws", ws.Start)
 
